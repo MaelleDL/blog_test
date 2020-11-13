@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>test</title>
+		<script type="text/javascript" src="index.js"></script>
+	</head>
+	
+	<body>
+        <h1>Poster un article</h1>        
+            <form method="post" action="http://localhost:3000/article">
+                <div>
+                    <label for="titre">Titre de l'article :</label>
+                    <input type="text" name="titre" id="titre" placeholder="Titre de l'article"/>
+                </div>
+                <div>
+                    <label for="auteur">Nom de l'auteur:</label>
+                    <input type="text" name="auteur" id="auteur" placeholder="Nom de l'auteur"/>
+                </div>
+                <div>             
+                <label for="date">La date du jour :</label>
+                <input type="date" name="date" id="date"/>
+                </div>
+                <div>
+                    <label for="article">Votre article :</label>
+                    <textarea name="article" id="article" rows="10" cols="50" placeholder="Parlez nous de votre ressource"></textarea>
+                </div>
+                <div>
+                     <input type="submit"/ value=”Envoyer”>
+                </div>    
+            </form> 	
+		
+	</body>
+	
+	
+</html>
+
