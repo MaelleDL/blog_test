@@ -4,7 +4,8 @@ const article= require('../models/article');
 
 router.get('/',async (req, res)=>{
     try{
-        res.sendFile('index.html');
+        const arts = await article.find();
+        res.send(arts);
     }catch (err){
         res.jsons({message:error});}
 });
@@ -42,7 +43,7 @@ router.post('/', async(req,res) =>{
         article: req.body.article});
     try{
         await art.save();
-        res.redirect("accepted.html");;
+        res.redirect("accepted.html");
     }catch(err){
         res.json({message: err})}
 });
