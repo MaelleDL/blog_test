@@ -16,6 +16,7 @@ app.use((req, res, next) => {
     next();
   });
 
+  app.use(express.static('../frontend'));
 
 
 app.listen(3000, () => {

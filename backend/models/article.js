@@ -9,10 +9,7 @@ const artSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    date:{
-        type: Date,
-        required: true
-    },
+    createdAt: Date,
     article:{
         type: String,
         required: true

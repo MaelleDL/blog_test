@@ -4,8 +4,8 @@ const article= require('../models/article');
 
 router.get('/',async (req, res)=>{
     try{
-        const arts = await this.article.find();
-        res.json(arts);
+        const arts = await article.find();
+        res.send(arts);
     }catch (err){
         res.jsons({message:error});}
 });
@@ -29,6 +29,7 @@ router.delete('/:articleID', async(req, res) =>{
 router.put('/:articleID', async(req, res) =>{
     try{
         const updatedart= await article.updateOne({_id: req.params.articleID})
+        res.json(updatedart)
     }catch(err){
         res.json({message: error});
     }
@@ -38,11 +39,11 @@ router.post('/', async(req,res) =>{
     const art= new article({
         titre: req.body.titre,
         auteur: req.body.auteur,
-        date: req.body.date,
+        createdAt: new Date(),
         article: req.body.article});
     try{
-        const savedart= await art.save();
-        res.json(savedart);
+        await art.save();
+        res.redirect("accepted.html");;
     }catch(err){
         res.json({message: err})}
 });
