@@ -13,7 +13,8 @@ const bodyParser= require('body-parser');
 
 // J'ai besoin de me connecter à ma base de données (je console log pour être bien sûre que je suis connectée):
 // visiblement c'est une action qui prend un peu de temps donc c'est pas mal de mettre dans les débuts du code
-mongoose.connect('mongodb+srv://MLDL:MlDlPass@cluster0.batv4.mongodb.net/piscinedb?retryWrites=true&w=majority', () => 
+let monUrl = require ('./config.json')
+mongoose.connect(monUrl.url, () => 
 console.log('connected to MongoDB!'));
 
 // // Je créer l'application body parser avec le
