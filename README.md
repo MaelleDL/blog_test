@@ -3,6 +3,6 @@
 1) installer les dépendances dans backend
 `npm install`
 
-2) ouvrir le fichier index.html dans front (formulaire), le remplir et l'envoyer (s'affiche le json que l'on a envoyé à la bdd)
+2) ouvrir le localhost 3000
 
 3) aller constater sur mongodb que notre nouveau formulaire est bien passé (c'est sur notre cluster dans piscinedb dans articles)
