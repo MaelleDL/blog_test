@@ -26,16 +26,16 @@ const generateHtml = (data) => {
     //on créer une variable i (convention pour les boucles for), le deuxième élément dans la parenthèse indique que tant que i n'est
     //pas suppérieur au nombre de données, la boucle reprend (donc dans notre cas tant qu'on a pas tout affiché), et i++ indique que
     //tant que la boucle tourne on rajoute 1 à i et que donc pour notre cas, on passe à l'article suivant dans notre base de données)
-    for (let i = 0; i <= data.length; i++) {
+    for (let i = data.length-1 ; i >0; i--) {
         //on indique le contenu du html que l'on va intégrer à notre page html de base
         //ne pas oublier le [i], ça marche pas sans ;)
         //petit focus sur la dernière ligne (le boutton), on y appelle un fonction au click (onclick) et on lui injecte en argument l'id
         // de l'article qui nous intéresse, ce sera important pour la suite
-        html += `<div>
-        <div>${data[i].titre}</div>
-        <div>${data[i].auteur}</div>
-        <div>${dateFormatter.format(new Date(data[i].createdAt))}</div>
-        <button type="button" onclick="getArticle('${data[i]._id}')">afficher</button>
+        html += `<div class="articles">
+        <div><h3>${data[i].titre}</h3></div>
+        <div>by: ${data[i].auteur}</div>
+        <div class="date">${dateFormatter.format(new Date(data[i].createdAt))}</div>
+        <button type="button" onclick="getArticle('${data[i]._id}')">AFFICHER</button>
         </div>`
 
         // je sélectionne l'endroit dans mon fichier html où je vais implémenter tout ça 
@@ -70,12 +70,11 @@ const generateHtmlArticle= (post) =>{
     // c'est donc simple, on dispose nos données dans des balises html (qui peuvent avoir des class et des id et qui seront
     //pris en charge par le css ;) )
     const html= `<div>
-    <div>${post.titre}</div>
-    <div>${post.auteur}</div>
-    <div>${dateFormatter.format(new Date(post.createdAt))}</div>
-    <div>${post.article}</div>
-    <button type="button" onclick="delete()">Delete</button>
-    <button type="button" onclick="getArts()">Sommaire</button>
+    <div class="info"><h1>${post.titre}</h1></div>
+    <div class="info">by: ${post.auteur}</div>
+    <div class="info">${dateFormatter.format(new Date(post.createdAt))}</div>
+    <div id="article">${post.article}</div>
+    <button type="button" onclick="getArts()">Retour au Sommaire</button>
     </div>`
     //on sélectionne là où on veut le mettre
     const infodiv = document.querySelector('#test')
@@ -83,6 +82,12 @@ const generateHtmlArticle= (post) =>{
         infodiv.innerHTML = html};
 
 
+const Accepted=async()=>{
+    resetPage();
+    const acceptedHtml=`<p>Votre formulaire a été accepté dans notre base de données</p>
+    <button onclick="getArts()" >Retour au Sommaire</button>`
+    const Accepted = document.querySelector('#test')
+        Accepted.innerHTML =acceptedHtml;
+}
 // je met en route ma fonction getArts
  getArts();
-

@@ -1,15 +1,100 @@
+/* Mobile first */
 html{
-    height: 100%;
-}
-
+    min-height: 100%;
+    background: linear-gradient(#715375, #f6f7f7);}
 body{
-    height: 90%;
+    min-height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
-
-#test{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f6f7f7;}
+#header{
     display: inline-flex;
-    justify-content: space-between;
-}
+    justify-content:space-around;
+    margin:5px;}
+#header h1{
+    font-size: 50px;
+    margin: 0;
+    cursor: pointer;} 
+#poster{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+    color:#f6f7f7;}
+#corps{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;}
+#corps h1{
+    text-align: center;
+    font-size: 50px;}
+#test{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;}
+.articles{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(#5c425f,#3b2a3d);
+    border-radius: 15%;
+    text-align: center;
+    font-size:30px;
+    padding: 10px 60px 20px 60px;
+    margin:30px;}
+ button{
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    color: #f6f7f7;
+    font-size: 30px;
+    font-weight:500;
+    background-color:transparent;
+    margin:10px;}
+.articles h3{
+    text-transform: uppercase;
+    margin: 10px;}
+.date{ font-size:20px;}
+#form1{display: flex;
+flex-direction: column;
+margin: auto;}
+.label{
+    display: flex;
+    flex-direction: column;}
+#submit{
+    border: none;
+    background: linear-gradient(#5c425f,#3b2a3d);
+    border-radius: 10%;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: #f6f7f7;
+    font-size: 30px;
+    font-weight:500;
+    background-color:transparent;
+    margin:10px;}
+#accepté{
+    display:flex;
+    flex-direction: column;
+    margin: auto;}
+#accepté a{
+    margin: auto;
+    cursor: pointer;
+    color: #f6f7f7;
+    font-size: 30px;
+    font-weight:500;}
+
+/* DESKTOP */
+@media only screen and (min-width: 992px){
+    #corps{width:95%;}
+    .articles{
+        font-size:25px;
+        padding: 10px 25px 20px 25px;
+        margin:10px;}
+    .articles button{
+        font-size: 25px;
+        margin:10px;}}

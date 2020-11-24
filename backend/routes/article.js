@@ -35,26 +35,26 @@ router.get('/:articleId', async (req, res) => {
         res.json({message:error});}
 });
 
-//c'est la route qui doit permettre de supprimer un article,
-router.delete('/:articleId', async(req, res) =>{
-    try{
-        //on lui dit de supprimer de la bdd l'article qui a cet identifiant
-        const removedart= await article.remove({_id : req.params.articleId});
-        //Et de nous renvoyer la base de données sans
-        res.json(removedart)
-    }catch(err){
-        res.json({message :error});}
-});
+// //c'est la route qui doit permettre de supprimer un article,
+// router.delete('/:articleId', async(req, res) =>{
+//     try{
+//         //on lui dit de supprimer de la bdd l'article qui a cet identifiant
+//         const removedart= await article.remove({_id : req.params.articleId});
+//         //Et de nous renvoyer la base de données sans
+//         res.json(removedart)
+//     }catch(err){
+//         res.json({message :error});}
+// });
 
-//c'est la route qui doit permettre de modifier un article, c'est le même principe que pour supprimer,
-router.put('/:articleID', async(req, res) =>{
-    try{
-        const updatedart= await article.updateOne({_id: req.params.articleId})
-        res.json(updatedart)
-    }catch(err){
-        res.json({message: error});
-    }
-});
+// //c'est la route qui doit permettre de modifier un article, c'est le même principe que pour supprimer,
+// router.put('/:articleId', async(req, res) =>{
+//     try{
+//         const updatedart= await article.updateOne({_id: req.params.articleId})
+//         res.json(updatedart)
+//     }catch(err){
+//         res.json({message: error});
+//     }
+// });
 
 
 // c'est la route qui indique la marche à suivre quand le serveur reçoit un formulaire
