@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>affichage</title>
-		<link rel="stylesheet" type="text/css" href="index.css">
-		<link rel="icon" type="image/png" href="/typewriter.png"/>
-        <script type="text/javascript" src="index.js"></script>
-		
-	</head>
-	
-	<body>
-		<div id="header">
-			<h1 onclick="getArts()">Sommaire</h1>
-			<img src="typewriter.png">
-			<a id="poster" href="formulaire.html">
-			<h1>Poster un</h1>
-			<h1>article</h1>
-			</a>
-		</div>
-		<div id="corps">
-		<h1>Sommaire</h1>
-		<div id="test"></div>
-	</div>		
-	</body>
-	
-	
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>affichage</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="icon" type="image/png" href="/ink.png" />
+    <script type="text/javascript" src="index.js"></script>
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+
+    <!-- CSS Reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+
+    <!-- Milligram CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+  </head>
+
+  <body>
+    <div id="header">
+      <h1 onclick="getArts()">Sommaire</h1>
+      <img src="ink.png" />
+      <h1 onclick="Post()">Contribuer</h1>
+    </div>
+    <div id="main">
+      <div id="title"></div>
+      <div id="corps"></div>
+    </div>
+  </body>
 </html>
